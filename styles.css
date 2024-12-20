@@ -237,6 +237,37 @@
   max-width: 70%;
   color: var(--grayish-violet);
 }
+.dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dialog-content p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.dialog-box.hidden {
+  display: none;
+}
+
+.dialog-box .btn-primary {
+  align-self: center;
+  padding: 10px 20px;
+}
 
 .intro .record-url-form {
   grid-row: 2;
