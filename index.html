@@ -87,7 +87,7 @@
         <div class="img-wrapper">
           <img src="images/illustration-working.svg" alt="Illustration of multitasking" role="presentation" />
         </div>
-        <form id="shorten-url-form" class="shorten-url-form">
+        <form id="record-url-form" class="record-url-form">
           <input
             id="meetLink"
             type="url"
@@ -201,7 +201,7 @@
       </div>
 
       <script>
-        document.getElementById('shorten-url-form').addEventListener('submit', async function (e) {
+        document.getElementById('record-url-form').addEventListener('submit', async function (e) {
           e.preventDefault();
 
           const meetLink = document.getElementById('meetLink').value;

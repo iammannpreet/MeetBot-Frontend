@@ -238,7 +238,7 @@
   color: var(--grayish-violet);
 }
 
-.intro .shorten-url-form {
+.intro .record-url-form {
   grid-row: 2;
   grid-column: 2/3;
 
@@ -249,12 +249,12 @@
   margin-top: 67px;
   padding: 50px;
 
-  background: var(--dark-violet) url(images/bg-shorten-desktop.svg) no-repeat;
+  background: var(--dark-violet) url(images/bg-record-desktop.svg) no-repeat;
   background-size: cover;
   border-radius: 9px;
 }
 
-.intro .shorten-url-form input {
+.intro .record-url-form input {
   flex: 1;
   font-size: 20px;
   padding: 17px 32px;
@@ -264,7 +264,7 @@
   border: none;
 }
 
-.intro .shorten-url-form .btn {
+.intro .record-url-form .btn {
   padding-top: 22px;
   padding-bottom: 22px;
   border-radius: 9px;
@@ -300,26 +300,26 @@
     width: 100%;
   }
 
-  .intro .shorten-url-form {
+  .intro .record-url-form {
     grid-row: 3;
     flex-direction: column;
     align-items: stretch;
   }
 
-  .intro .shorten-url-form {
-    background: var(--dark-violet) url(images/bg-shorten-mobile.svg) no-repeat;
+  .intro .record-url-form {
+    background: var(--dark-violet) url(images/bg-record-mobile.svg) no-repeat;
     background-position: right top;
     padding: 25px;
   }
 
-  .intro .shorten-url-form input {
+  .intro .record-url-form input {
     width: 100%;
     margin-bottom: 15px;
     padding: 12px 23px;
     font-size: 16px;
   }
 
-  .intro .shorten-url-form .btn {
+  .intro .record-url-form .btn {
     padding: 16px 40px;
   }
 }
