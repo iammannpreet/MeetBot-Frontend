@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>MeetBot</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      .message {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+      .success {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="app-header">
+        <input type="checkbox" id="nav-visible" tabindex="-1" />
+        <div class="navbar">
+          <a href="/" class="navbar-brand">
+            <h1 class="logo">MeetBot</h1>
+          </a>          <label for="nav-visible" class="toggle-nav">
+            <svg class="icon-menu" width="25" viewBox="0 0 512 512">
+              <g>
+                <path
+                  d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z"
+                ></path>
+              </g>
+              <g>
+                <path
+                  d="M492,76H20C8.954,76,0,84.954,0,96s8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,76,492,76z"
+                ></path>
+              </g>
+              <g>
+                <path
+                  d="M492,396H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20
+                  C512,404.954,503.046,396,492,396z"
+                ></path>
+              </g>
+            </svg>
+          </label>
+
+          <nav class="navbar-nav">
+            <a href="/">Features</a>
+            <a href="/">Pricing</a>
+            <a href="/">Resources</a>
+
+            <div class="separator-mobile"></div>
+
+            <button type="button" class="btn btn-small btn-secondary btn-login">Login</button>
+            <button type="button" class="btn btn-small btn-primary">Sign Up</button>
+          </nav>
+        </div>
+      </div>
+
+      <div class="intro">
+        <div class="content">
+          <h1 class="title">Be in Many Places at Once</h1>
+          <p class="desc">
+            MeetBot simplifies your online meetings by recording and organizing them so you can stay
+            connected, informed, and always prepared.
+          </p> <button class="btn btn-primary">Get Started</button>
+        </div>
+        <div class="img-wrapper">
+          <img src="images/illustration-working.svg" alt="Illustration of multitasking" role="presentation" />
+        </div>
+        <form id="shorten-url-form" class="shorten-url-form">
+          <input
+            id="meetLink"
+            type="url"
+            placeholder="Paste the Google Meet link here&hellip;"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Record It!</button>
+        </form>
+        <p id="responseMessage" class="message"></p>
+      </div>
+      <div class="stats">
+        <div class="content">
+          <h1 class="title">Enhanced Meeting Insights</h1>
+          <p class="desc">
+            With MeetBot, track and revisit your meetings through detailed recordings and insights to
+            improve productivity and collaboration.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">
+                <img src="images/icon-brand-recognition.svg" alt="" role="presentation" />
+              </div>
+              <div class="card-title">Seamless Recordings</div>
+              <div class="card-body">
+                Easily record your meetings with just a link. No setup required, making the process
+                stress-free and efficient.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <img src="images/icon-detailed-records.svg" alt="" role="presentation" />
+              </div>
+              <div class="card-title">Detailed Insights</div>
+              <div class="card-body">
+                Get an in-depth view of your meeting data and discussions. Know what was shared and
+                who attended.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <img src="images/icon-fully-customizable.svg" alt="" role="presentation" />
+              </div>
+              <div class="card-title">Smart Organization</div>
+              <div class="card-body">
+                Organize and categorize your meetings for easy access, ensuring you stay on top of
+                your tasks and collaborations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="start-now">
+        <h1 class="title">Record Smarter, Work Better</h1>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+
+      <div class="app-footer">
+        <div class="content"><a href="/" class="navbar-brand">
+          <h1 class="logo2">MeetBot</h1>
+        </a>
+          <div class="company-links">
+            <div class="group">
+              <h5 class="title">Features</h5>
+              <div class="links">
+                <a href="">Meet Recording</a>
+                <a href="">Smart Insights</a>
+                <a href="">Collaboration</a>
+              </div>
+            </div>
+            <div class="group">
+              <h5 class="title">Resources</h5>
+              <div class="links">
+                <a href="">Blog</a>
+                <a href="">Developers</a>
+                <a href="">Support</a>
+              </div>
+            </div>
+            <div class="group">
+              <h5 class="title">Company</h5>
+              <div class="links">
+                <a href="#">About</a>
+                <a href="#">Our Team</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#">
+              <img src="images/icon-facebook.svg" alt="Facebook page" />
+            </a>
+            <a href="#">
+              <img src="images/icon-twitter.svg" alt="Twitter page" />
+            </a>
+            <a href="#">
+              <img src="images/icon-pinterest.svg" alt="Pinterest page" />
+            </a>
+            <a href="#">
+              <img src="images/icon-instagram.svg" alt="Instagram page" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="attribution">
+        Created by
+        <a href="https://www.iammannpreet.com" target="_blank">iammannpreet</a>.
+      </div>
+
+      <script>
+        document.getElementById('shorten-url-form').addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const meetLink = document.getElementById('meetLink').value;
+          const responseMessage = document.getElementById('responseMessage');
+
+          responseMessage.textContent = ''; // Clear previous messages
+          responseMessage.className = 'message'; // Reset class
+
+          try {
+            // Show a loading message
+            responseMessage.textContent = 'Processing...';
+
+            // Send a POST request using Fetch API
+            const response = await fetch('http://localhost:3000/api/open-meet', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ meetLink }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              responseMessage.textContent = result.message;
+              responseMessage.classList.add('success');
+            } else {
+              throw new Error(result.error || 'Something went wrong');
+            }
+          } catch (error) {
+            responseMessage.textContent = error.message;
+            responseMessage.classList.add('error');
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>
