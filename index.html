@@ -101,6 +101,12 @@
             placeholder="Paste the Google Meet link here&hellip;"
             required
           />
+          <input
+            id="targetUser"
+            type="text"
+            placeholder="Enter the name of the target user&hellip;"
+            required
+          />
           <button type="submit" class="btn btn-primary">Record It!</button>
         </form>
         <p id="responseMessage" class="message"></p>
@@ -206,46 +212,53 @@
         Created by
         <a href="https://www.iammannpreet.com" target="_blank">iammannpreet</a>.
       </div>
-<script>
-      document.getElementById('record-url-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
+      <script>
+        document.getElementById('record-url-form').addEventListener('submit', async function (e) {
+          e.preventDefault();
       
-        const meetLink = document.getElementById('meetLink').value.trim();
-        const dialogBox = document.getElementById('dialogBox');
-        const dialogMessage = document.getElementById('dialogMessage');
-        const dialogCloseButton = document.getElementById('dialogCloseButton');
+          const meetLink = document.getElementById('meetLink').value.trim();
+          const targetUser = document.getElementById('targetUser').value.trim();
+          const dialogBox = document.getElementById('dialogBox');
+          const dialogMessage = document.getElementById('dialogMessage');
+          const dialogCloseButton = document.getElementById('dialogCloseButton');
       
-        try {
-          // Show a loading message in the dialog
-          dialogMessage.textContent = 'Processing...';
-          dialogBox.classList.remove('hidden');
-      
-          // Send a POST request using Fetch API
-          const response = await fetch('http://localhost:3000/api/open-google-meet', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ meetLink }),
-          });
-      
-          const result = await response.json();
-      
-          if (response.ok) {
-            dialogMessage.textContent = result.message || 'Recording started successfully!';
-          } else {
-            throw new Error(result.error || 'Something went wrong');
+          if (!meetLink || !targetUser) {
+            dialogMessage.textContent = 'Both Meet link and Target User are required!';
+            dialogBox.classList.remove('hidden');
+            return;
           }
-        } catch (error) {
-          dialogMessage.textContent = error.message;
-        } finally {
-          // Add a click listener to close the dialog box
-          dialogCloseButton.addEventListener('click', () => {
-            dialogBox.classList.add('hidden');
-          });
-        }
-      });
-    </script>
+      
+          try {
+            // Show a loading message in the dialog
+            dialogMessage.textContent = 'Processing...';
+            dialogBox.classList.remove('hidden');
+      
+            // Send a POST request using Fetch API
+            const response = await fetch('http://localhost:3000/api/open-google-meet', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ meetLink, targetUser }),
+            });
+      
+            const result = await response.json();
+      
+            if (response.ok) {
+              dialogMessage.textContent = result.message || 'Recording started successfully!';
+            } else {
+              throw new Error(result.error || 'Something went wrong');
+            }
+          } catch (error) {
+            dialogMessage.textContent = error.message;
+          } finally {
+            // Add a click listener to close the dialog box
+            dialogCloseButton.addEventListener('click', () => {
+              dialogBox.classList.add('hidden');
+            });
+          }
+        });
+      </script>
     </div>
   </body>
 </html>
